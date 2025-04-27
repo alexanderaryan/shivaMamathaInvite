@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Play Audio on Button Click</title>
+</head>
+<body>
+
+    <!-- Button to trigger the invitation -->
+    <button id="open-invitation-btn">Open Invitation</button>
+
+    <!-- Audio Element (using a local MP3 file) -->
+    <audio id="audio-player" muted>
+        <source src="audio/audio-file.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <p>Audio will play once you click the button.</p>
+
+    <script>
+        document.getElementById('open-invitation-btn').addEventListener('click', function() {
+            const audioElement = document.getElementById('audio-player');
+
+            // Try to play the audio when the button is clicked (muted initially)
+            audioElement.play().catch(function(error) {
+                console.log("Error playing audio: ", error);
+            });
+
+            // Unmute and continue playing the audio after a brief delay
+            setTimeout(function() {
+                audioElement.muted = false; // Unmute the audio
+                audioElement.play(); // Ensure it continues playing after unmuting
+            }, 500); // You can adjust the delay if needed
+        });
+    </script>
+
+</body>
+</html>

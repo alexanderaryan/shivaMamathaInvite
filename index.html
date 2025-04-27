@@ -363,50 +363,10 @@
 <!--</div>-->
 
 
-	<div class="audio-play">
-        <!-- Custom Play/Pause Button -->
-        <button id="audio-control" onclick="togglePlayButton1()">
-            <img id="audio-icon" src="images/play.png" alt="Play/Pause">
-        </button>
-hello
-        <!-- Audio Element -->
-        <audio id="audio-player" loop>
-            <!-- Replace with the path to your local MP3 file -->
-            <source src="audio/audio-file.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
 
-    <!-- Optional: Status message for audio playback -->
-    <div id="audio-status">
-        <p>Audio is ready to play.</p>
-    </div>
 
-    <script>
-        const audioElement = document.getElementById('audio-player');
-        const controlButton = document.getElementById('audio-control');
-        const icon = document.getElementById('audio-icon');
 
-        // Toggle the play/pause button and the icon image
-        function togglePlayButton1() {
-            if (audioElement.paused) {
-                audioElement.play();
-                icon.src = "images/stop.jpg";  // Change to stop icon when playing
-            } else {
-                audioElement.pause();
-                icon.src = "images/play.png";  // Change to play icon when paused
-            }
-        }
 
-        // Event listener to update the status when the audio is playing or paused
-        audioElement.addEventListener('play', function() {
-            document.getElementById('audio-status').innerHTML = "<p>Audio is playing...</p>";
-        });
-
-        audioElement.addEventListener('pause', function() {
-            document.getElementById('audio-status').innerHTML = "<p>Audio is paused.</p>";
-        });
-    </script>
 
 
 <!-- jQuery -->
