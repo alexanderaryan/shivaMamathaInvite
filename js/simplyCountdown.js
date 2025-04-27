@@ -110,12 +110,13 @@
      */
     exports.simplyCountdown = (elt, args) => {
         const eltProto = Object.getPrototypeOf(elt);
+        debugger;
         let parameters = extend({
-            year: 2022,
-            month: 8,
-            day: 31,
-            hours: 9,
-            minutes: 0,
+            year: 2025,
+            month: 5,
+            day: 4,
+            hours: 18,
+            minutes: 15,
             seconds: 0,
             words: {
                 days: { singular: 'day', plural: 'days' },
@@ -155,7 +156,7 @@
         } else {
             cd = elt;
         }
-
+        debugger;
         targetTmpDate = new Date(
             parameters.year,
             parameters.month - 1,
@@ -201,6 +202,7 @@
                 };
 
                 now = new Date();
+                debugger;
                 if (parameters.enableUtc) {
                     nowUtc = new Date(now.getFullYear(), now.getMonth(), now.getDate(),
                         now.getHours(), now.getMinutes(), now.getSeconds());

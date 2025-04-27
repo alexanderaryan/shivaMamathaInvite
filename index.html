@@ -57,6 +57,7 @@
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
+
 	<link type="text/css" rel="stylesheet" href="lib/lightgallery.js/dist/css/lightgallery-bundle.min.css" />
 	<link type="text/css" rel="stylesheet" href="lib/lightgallery.js/dist/css/lg-thumbnail.css" />
 	<link type="text/css" rel="stylesheet" href="lib/lightgallery.js/dist/css/lg-autoplay.css" />
@@ -68,6 +69,7 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/simplyCountdown.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -411,24 +413,23 @@
 
 
 <script>
-	// <!-- Edit Alert: Change the Date of the Event -->
-	day = 4; month = 4; year = 2025;
-	// <!-- Edit Alert: Change the time of the Event -->
-	hour = 18; minute = 30;
+	 day = 4; month = 5; year = 2025;
+	hour = 20; minute = 30;
 	var d = new Date(year, month, day, hour, minute, 0, 0);
 
 	// default example
 
 	simplyCountdown('.simply-countdown-wedding', {
 		year: d.getFullYear(),
-		month: d.getMonth() + 1,
+		month: d.getMonth(),
 		day: d.getDate() ,
 		hour: d.getHours(),
 		minutes: d.getMinutes(), // Default is 0 [0-59] integer
 		seconds: d.getSeconds(), // Default is 0 [0-59] integer
-		countUp: false,
-		// enableUtc: true
+		countUp: true,
+		enableUtc: false,
 	});
+
 
 	//jQuery example
 	// $('#simply-countdown-losange').simplyCountdown({
