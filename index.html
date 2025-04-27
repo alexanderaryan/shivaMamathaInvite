@@ -364,7 +364,11 @@
 
 
 
-
+<!-- Audio Element (using a local MP3 file) -->
+    <audio id="audio-player" loop muted>
+        <source src="audio/audio-file.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
 
 
@@ -512,12 +516,19 @@
 	}
 
 	function playAudio1() {
-		if ( !(player1.getPlayerState() == 1 || player1.getPlayerState() == 3) ) {
-			player1.playVideo();
-			togglePlayButton1(true);
-		}
-	}
+            const audioElement = document.getElementById('audio-player');
 
+            // Try to play the audio (muted initially)
+            audioElement.play().catch(function(error) {
+                console.log("Error playing audio: ", error);
+            });
+
+            // Unmute and continue playing after a short delay (500ms)
+            setTimeout(function() {
+                audioElement.muted = false; // Unmute the audio
+                audioElement.play(); // Ensure it continues playing after unmuting
+            }, 500);
+        }
 	function onPlayerReady1(event) {
 		player1.setPlaybackQuality("small");
 		document.getElementById("youtube-audio1").style.display = "block";
